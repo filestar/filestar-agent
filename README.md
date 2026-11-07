@@ -86,6 +86,17 @@ of them read, such as CAD (DWG, STEP, JT), 3D, embroidery (DST, PES), camera RAW
   name (`claude-code/2.1`). Never the contents of a file for a local skill.
 - **Usage events and crash reports**, as the Filestar app sends them.
 
+Every host the command line talks to, all run by Bosma Interactive AB:
+
+| Host | Why |
+|---|---|
+| `license.filestar.com` | Licence check, the free-conversion count, run records |
+| `meta.filestar.com` | The skill catalogue, file-type data, usage events |
+| `nuget.filestar.com`, `cdn.filestar.com` | Downloading a plugin or tool the first time a skill needs it |
+| `gateway.filestar.com` | Cloud skills only: the file is uploaded and the result downloaded |
+| `bugsink.filestar.com` | Crash reports |
+| `registry.npmjs.org` | npm itself, fetching the `filestar` package |
+
 Details: [filestar.com/help/ai-agents/privacy](https://filestar.com/help/ai-agents/privacy) ·
 Privacy policy: [filestar.com/privacy-policy](https://filestar.com/privacy-policy)
 
