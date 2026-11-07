@@ -1,0 +1,39 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.filestar/filestar",
+  "title": "Filestar",
+  "description": "Convert and open 1,600+ file types locally: CAD, 3D, video, audio, images, documents, embroidery.",
+  "websiteUrl": "https://filestar.com/help/ai-agents",
+  "repository": {
+    "url": "https://github.com/filestar/filestar-agent",
+    "source": "github"
+  },
+  "version": "30.7.0",
+  "icons": [
+    {
+      "src": "https://filestar.com/logo-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "filestar",
+      "version": "30.7.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ]
+    }
+  ]
+}

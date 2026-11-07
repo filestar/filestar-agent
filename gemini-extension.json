@@ -1,0 +1,16 @@
+{
+  "name": "filestar",
+  "version": "30.7.0",
+  "description": "Open and convert 1,600+ file types locally: CAD, 3D, video, audio, images, documents, embroidery and legacy formats.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "filestar": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "filestar@30.7.0",
+        "mcp"
+      ]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "filestar",
+  "version": "30.7.0",
+  "description": "Open and convert 1,600+ file types locally: CAD, 3D, video, audio, images, documents, embroidery and legacy formats. An MCP server and a skill, on your own computer.",
+  "author": {
+    "name": "Bosma Interactive AB",
+    "url": "https://filestar.com"
+  },
+  "homepage": "https://filestar.com/help/ai-agents",
+  "repository": "https://github.com/filestar/filestar-agent",
+  "license": "MIT",
+  "keywords": [
+    "file-conversion",
+    "convert",
+    "cad",
+    "3d",
+    "video",
+    "audio",
+    "images",
+    "documents",
+    "embroidery",
+    "local"
+  ],
+  "extensions": {
+    "com.openai": {
+      "requires_local_executor": true,
+      "interface": {
+        "displayName": "Filestar",
+        "shortDescription": "Open and convert 1,600+ file types on your own computer.",
+        "longDescription": "Filestar lets your agent open and convert 1,600+ file types (CAD, 3D, video, audio, images, documents, embroidery, legacy formats) locally. One MCP server instead of ten. 50 free conversions per computer, no account.",
+        "developerName": "Bosma Interactive AB",
+        "category": "Productivity",
+        "websiteURL": "https://filestar.com/help/ai-agents",
+        "privacyPolicyURL": "https://filestar.com/privacy-policy",
+        "termsOfServiceURL": "https://filestar.com/terms-and-conditions",
+        "defaultPrompt": "Convert this file to a format I can open",
+        "brandColor": "#A0FCFF",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}

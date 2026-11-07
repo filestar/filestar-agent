@@ -1,0 +1,81 @@
+{
+  "manifest_version": "0.3",
+  "name": "filestar",
+  "display_name": "Filestar",
+  "version": "30.7.0",
+  "description": "Open and convert 1,600+ file types on your computer: CAD, 3D, video, audio, images, documents, embroidery.",
+  "long_description": "Filestar lets Claude open and convert 1,600+ file types (CAD, 3D, video, audio, images, documents, embroidery, legacy formats) locally on your machine. Files stay on your computer: cloud skills are refused unless you agree. On first start the extension fetches the Filestar command line for your platform from npm (about 100 MB, once). 50 free conversions per computer, no account.",
+  "author": {
+    "name": "Bosma Interactive AB",
+    "url": "https://filestar.com"
+  },
+  "homepage": "https://filestar.com/help/ai-agents",
+  "documentation": "https://filestar.com/help/ai-agents/mcp-server",
+  "support": "https://github.com/filestar/filestar-agent/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/filestar/filestar-agent"
+  },
+  "icon": "icon.png",
+  "license": "MIT",
+  "privacy_policies": [
+    "https://filestar.com/privacy-policy"
+  ],
+  "keywords": [
+    "file-conversion",
+    "convert",
+    "cad",
+    "3d",
+    "video",
+    "audio",
+    "images",
+    "documents",
+    "embroidery"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "detect_file",
+      "description": "The file type of one or more files, and why (no network)."
+    },
+    {
+      "name": "list_skills",
+      "description": "The commands Filestar offers for a file."
+    },
+    {
+      "name": "describe_skill",
+      "description": "The parameters of one command for a file."
+    },
+    {
+      "name": "convert",
+      "description": "Runs a command (or recipe) on files; returns the output paths."
+    },
+    {
+      "name": "account_status",
+      "description": "Plan, free conversions left and how to upgrade."
+    },
+    {
+      "name": "account_upgrade",
+      "description": "A link for the person to buy a plan for this install."
+    }
+  ],
+  "compatibility": {
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}

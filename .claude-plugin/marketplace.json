@@ -1,0 +1,20 @@
+{
+  "name": "filestar",
+  "owner": {
+    "name": "Bosma Interactive AB",
+    "url": "https://filestar.com"
+  },
+  "metadata": {
+    "description": "Filestar for AI agents: open and convert 1,600+ file types on your own computer."
+  },
+  "plugins": [
+    {
+      "name": "filestar",
+      "source": "./",
+      "description": "Open and convert 1,600+ file types locally: CAD, 3D, video, audio, images, documents, embroidery and legacy formats.",
+      "version": "30.7.0",
+      "category": "productivity",
+      "homepage": "https://filestar.com/help/ai-agents"
+    }
+  ]
+}

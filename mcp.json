@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "filestar": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "filestar@30.7.0",
+        "mcp"
+      ]
+    }
+  }
+}

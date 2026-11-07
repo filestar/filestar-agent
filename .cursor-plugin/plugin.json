@@ -1,0 +1,26 @@
+{
+  "name": "filestar",
+  "version": "30.7.0",
+  "description": "Open and convert 1,600+ file types locally: CAD, 3D, video, audio, images, documents, embroidery and legacy formats.",
+  "author": {
+    "name": "Bosma Interactive AB"
+  },
+  "homepage": "https://filestar.com/help/ai-agents",
+  "repository": "https://github.com/filestar/filestar-agent",
+  "license": "MIT",
+  "keywords": [
+    "file-conversion",
+    "convert",
+    "cad",
+    "3d",
+    "video",
+    "audio",
+    "images",
+    "documents",
+    "embroidery",
+    "local"
+  ],
+  "logo": "assets/logo.png",
+  "skills": "skills",
+  "mcpServers": "mcp.json"
+}

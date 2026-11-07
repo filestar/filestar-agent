@@ -1,0 +1,69 @@
+# Keeps every manifest pinned to the npm package `filestar` that is live, and publishes that version to the MCP
+# registry (agent-marketing.html A5). A client release publishes npm; within a day this moves the pin, packs the
+# Claude Desktop extension, tags a release and updates registry.modelcontextprotocol.io.
+#
+# Secret MCP_DNS_PRIVATE_KEY: the Ed25519 private key (hex) whose public key is in the TXT record of filestar.com
+# ("v=MCPv1; k=ed25519; p=..."), which proves the namespace com.filestar.
+name: Follow npm
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Pin this version instead of npm's latest"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  follow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 22
+
+      - name: Pin
+        id: pin
+        run: |
+          before=$(node -p "require('./server.json').version")
+          if [ -n "${{ inputs.version }}" ]; then node scripts/bump-version.cjs "${{ inputs.version }}"; else node scripts/bump-version.cjs --latest; fi
+          after=$(node -p "require('./server.json').version")
+          echo "version=$after" >> "$GITHUB_OUTPUT"
+          if [ "$before" = "$after" ]; then echo "changed=false" >> "$GITHUB_OUTPUT"; else echo "changed=true" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Check the package names this server (the registry refuses it otherwise)
+        if: steps.pin.outputs.changed == 'true'
+        run: |
+          test "$(npm view filestar@${{ steps.pin.outputs.version }} mcpName)" = "com.filestar/filestar"
+
+      - name: Pack the Claude Desktop extension
+        if: steps.pin.outputs.changed == 'true'
+        run: npx -y @anthropic-ai/mcpb@2.1.2 pack mcpb "filestar-${{ steps.pin.outputs.version }}.mcpb"
+
+      - name: Commit, tag and release
+        if: steps.pin.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          v=${{ steps.pin.outputs.version }}
+          git config user.name "filestar-bot"
+          git config user.email "noreply@filestar.com"
+          git add -A -- . ':!*.mcpb'
+          git commit -m "Pin filestar@$v"
+          git tag "v$v"
+          git push origin HEAD --tags
+          gh release create "v$v" "filestar-$v.mcpb" --title "Filestar $v" --notes "Pinned to npm filestar@$v. filestar-$v.mcpb installs the MCP server in Claude Desktop."
+
+      - name: Publish to the MCP registry
+        if: steps.pin.outputs.changed == 'true'
+        env:
+          MCP_DNS_PRIVATE_KEY: ${{ secrets.MCP_DNS_PRIVATE_KEY }}
+        run: |
+          curl -sL https://github.com/modelcontextprotocol/registry/releases/download/v1.8.8/mcp-publisher_linux_amd64.tar.gz | tar xz mcp-publisher
+          ./mcp-publisher login dns --domain filestar.com --private-key "$MCP_DNS_PRIVATE_KEY"
+          ./mcp-publisher publish
