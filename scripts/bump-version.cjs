@@ -87,9 +87,9 @@ function renderLinks(version) {
   return [
     '<!-- install-links:start (written by scripts/bump-version.cjs) -->',
     `[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](${l.cursor})`,
-    `[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Filestar-0098FF?logo=visualstudiocode&logoColor=white)](${l.vscode})`,
+    `[![Install in VS Code](assets/badges/vscode.svg)](${l.vscode})`,
     `[![Add to Kiro](https://kiro.dev/images/add-to-kiro.svg)](${l.kiro})`,
-    `[![LM Studio, Goose and more](https://img.shields.io/badge/More-LM_Studio,_Goose,_Claude_Desktop-555)](${l.page})`,
+    `[![LM Studio, Goose and more](assets/badges/more.svg)](${l.page})`,
     '<!-- install-links:end -->',
   ].join('\n');
 }

@@ -10,9 +10,9 @@ what can be done with it, and converts it, on your computer. 50 free conversions
 
 <!-- install-links:start (written by scripts/bump-version.cjs) -->
 [![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=filestar&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsImZpbGVzdGFyQDMwLjcuMCIsIm1jcCJdfQ%3D%3D)
-[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Filestar-0098FF?logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522filestar%2522%252C%2522type%2522%253A%2522stdio%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522filestar%254030.7.0%2522%252C%2522mcp%2522%255D%257D)
+[![Install in VS Code](assets/badges/vscode.svg)](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522filestar%2522%252C%2522type%2522%253A%2522stdio%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522filestar%254030.7.0%2522%252C%2522mcp%2522%255D%257D)
 [![Add to Kiro](https://kiro.dev/images/add-to-kiro.svg)](https://kiro.dev/launch/mcp/add?name=filestar&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22filestar%4030.7.0%22%2C%22mcp%22%5D%7D)
-[![LM Studio, Goose and more](https://img.shields.io/badge/More-LM_Studio,_Goose,_Claude_Desktop-555)](https://filestar.com/agents#install)
+[![LM Studio, Goose and more](assets/badges/more.svg)](https://filestar.com/agents#install)
 <!-- install-links:end -->
 
 This repository holds the open parts: the plugin manifests for Claude Code, Cursor, Codex and Gemini CLI, the skill,
