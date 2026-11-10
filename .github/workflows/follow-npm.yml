@@ -36,17 +36,26 @@ jobs:
           echo "version=$after" >> "$GITHUB_OUTPUT"
           if [ "$before" = "$after" ]; then echo "changed=false" >> "$GITHUB_OUTPUT"; else echo "changed=true" >> "$GITHUB_OUTPUT"; fi
 
+      # A package built before mcpName was added (30.7.1 and older) can't be listed: skip quietly and wait for the
+      # next one, rather than fail every morning.
       - name: Check the package names this server (the registry refuses it otherwise)
+        id: check
         if: steps.pin.outputs.changed == 'true'
         run: |
-          test "$(npm view filestar@${{ steps.pin.outputs.version }} mcpName)" = "com.filestar/filestar"
+          v=${{ steps.pin.outputs.version }}
+          if [ "$(npm view "filestar@$v" mcpName)" = "com.filestar/filestar" ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::filestar@$v has no mcpName com.filestar/filestar; nothing pinned or published. Waiting for the next npm release."
+          fi
 
       - name: Pack the Claude Desktop extension
-        if: steps.pin.outputs.changed == 'true'
+        if: steps.check.outputs.go == 'true'
         run: npx -y @anthropic-ai/mcpb@2.1.2 pack mcpb "filestar-${{ steps.pin.outputs.version }}.mcpb"
 
       - name: Commit, tag and release
-        if: steps.pin.outputs.changed == 'true'
+        if: steps.check.outputs.go == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -60,7 +69,7 @@ jobs:
           gh release create "v$v" "filestar-$v.mcpb" --title "Filestar $v" --notes "Pinned to npm filestar@$v. filestar-$v.mcpb installs the MCP server in Claude Desktop."
 
       - name: Publish to the MCP registry
-        if: steps.pin.outputs.changed == 'true'
+        if: steps.check.outputs.go == 'true'
         env:
           MCP_DNS_PRIVATE_KEY: ${{ secrets.MCP_DNS_PRIVATE_KEY }}
         run: |
