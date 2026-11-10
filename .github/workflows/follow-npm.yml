@@ -40,7 +40,7 @@ jobs:
       # next one, rather than fail every morning.
       - name: Check the package names this server (the registry refuses it otherwise)
         id: check
-        if: steps.check.outputs.go == 'true'
+        if: steps.pin.outputs.changed == 'true'
         run: |
           v=${{ steps.pin.outputs.version }}
           if [ "$(npm view "filestar@$v" mcpName)" = "com.filestar/filestar" ]; then
