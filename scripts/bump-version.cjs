@@ -86,10 +86,23 @@ function renderLinks(version) {
   const l = installLinks(version);
   return [
     '<!-- install-links:start (written by scripts/bump-version.cjs) -->',
-    `[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](${l.cursor})`,
-    `[![Install in VS Code](assets/badges/vscode.svg)](${l.vscode})`,
-    `[![Add to Kiro](https://kiro.dev/images/add-to-kiro.svg)](${l.kiro})`,
-    `[![LM Studio, Goose and more](assets/badges/more.svg)](${l.page})`,
+    // One badge per agent we support (assets/badges, made from each agent's own mark): a one-click link
+    // where the agent has one, the install picker on filestar.com otherwise. Spaces keep them on a row.
+    [
+      ['Claude Code', 'claude-code', l.page],
+      ['Claude Desktop', 'claude-desktop', l.page],
+      ['Codex', 'codex', l.page],
+      ['Cursor', 'cursor', l.cursor],
+      ['Gemini CLI', 'gemini-cli', l.page],
+      ['GitHub Copilot', 'github-copilot', l.vscode],
+      ['VS Code', 'vs-code', l.vscode],
+      ['Windsurf', 'windsurf', l.page],
+      ['Kiro', 'kiro', l.kiro],
+      ['Junie', 'junie', l.page],
+      ['LM Studio', 'lm-studio', l.page],
+      ['Goose', 'goose', l.page],
+      ['Cline', 'cline', l.page],
+    ].map(([name, file, href]) => `[![${name}](assets/badges/${file}.svg)](${href})`).join('\n'),
     '<!-- install-links:end -->',
   ].join('\n');
 }

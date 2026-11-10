@@ -9,10 +9,19 @@ Your agent hits a `.dwg`, a `.jt`, a `.heic` or a `.dst` it can't read. With Fil
 what can be done with it, and converts it, on your computer. 50 free conversions per computer, no account.
 
 <!-- install-links:start (written by scripts/bump-version.cjs) -->
-[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=filestar&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsImZpbGVzdGFyQDMwLjcuMCIsIm1jcCJdfQ%3D%3D)
-[![Install in VS Code](assets/badges/vscode.svg)](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522filestar%2522%252C%2522type%2522%253A%2522stdio%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522filestar%254030.7.0%2522%252C%2522mcp%2522%255D%257D)
-[![Add to Kiro](https://kiro.dev/images/add-to-kiro.svg)](https://kiro.dev/launch/mcp/add?name=filestar&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22filestar%4030.7.0%22%2C%22mcp%22%5D%7D)
-[![LM Studio, Goose and more](assets/badges/more.svg)](https://filestar.com/agents#install)
+[![Claude Code](assets/badges/claude-code.svg)](https://filestar.com/agents#install)
+[![Claude Desktop](assets/badges/claude-desktop.svg)](https://filestar.com/agents#install)
+[![Codex](assets/badges/codex.svg)](https://filestar.com/agents#install)
+[![Cursor](assets/badges/cursor.svg)](https://cursor.com/en/install-mcp?name=filestar&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsImZpbGVzdGFyQDMwLjcuMCIsIm1jcCJdfQ%3D%3D)
+[![Gemini CLI](assets/badges/gemini-cli.svg)](https://filestar.com/agents#install)
+[![GitHub Copilot](assets/badges/github-copilot.svg)](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522filestar%2522%252C%2522type%2522%253A%2522stdio%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522filestar%254030.7.0%2522%252C%2522mcp%2522%255D%257D)
+[![VS Code](assets/badges/vs-code.svg)](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522filestar%2522%252C%2522type%2522%253A%2522stdio%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522filestar%254030.7.0%2522%252C%2522mcp%2522%255D%257D)
+[![Windsurf](assets/badges/windsurf.svg)](https://filestar.com/agents#install)
+[![Kiro](assets/badges/kiro.svg)](https://kiro.dev/launch/mcp/add?name=filestar&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22filestar%4030.7.0%22%2C%22mcp%22%5D%7D)
+[![Junie](assets/badges/junie.svg)](https://filestar.com/agents#install)
+[![LM Studio](assets/badges/lm-studio.svg)](https://filestar.com/agents#install)
+[![Goose](assets/badges/goose.svg)](https://filestar.com/agents#install)
+[![Cline](assets/badges/cline.svg)](https://filestar.com/agents#install)
 <!-- install-links:end -->
 
 This repository holds the open parts: the plugin manifests for Claude Code, Cursor, Codex and Gemini CLI, the skill,
@@ -114,23 +123,6 @@ plan; nothing is sold through the agent. See
 - "What is `drawing.dwg`? Make me a PDF of it."
 - "Turn `part.step` into a glTF I can open in a browser."
 - "Convert this embroidery file `logo.dst` to a PNG so I can see the design."
-
-## In this repository
-
-| Path | For |
-|---|---|
-| `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, `.mcp.json` | Claude Code plugin and marketplace |
-| `plugin.json`, `mcp.json` | [Agent Plugins](https://agent-plugins.org) (Cursor, Codex) |
-| `.cursor-plugin/plugin.json` | Cursor Marketplace |
-| `.agents/plugins/marketplace.json` | Codex marketplace |
-| `gemini-extension.json`, `GEMINI.md` | Gemini CLI extension |
-| `server.json` | The [MCP Registry](https://registry.modelcontextprotocol.io) entry `com.filestar/filestar` |
-| `skills/filestar/SKILL.md` | The Agent Skill |
-| `llms-install.md` | Setup steps for Cline and Roo Code |
-| `mcpb/` | A Claude Desktop extension (`.mcpb`) |
-| `scripts/bump-version.cjs` | Pins every file to one npm version |
-
-Every manifest pins one exact version of the npm package. `node scripts/bump-version.cjs --latest` moves them all.
 
 ## Help
 
