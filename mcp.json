@@ -6,7 +6,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "filestar@30.7.0",
+        "filestar@30.8.0",
         "mcp"
       ]
     }

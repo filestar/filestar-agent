@@ -18,14 +18,14 @@ Keep the exact version: do not change it to `latest`.
   "mcpServers": {
     "filestar": {
       "command": "npx",
-      "args": ["-y", "filestar@30.7.0", "mcp"]
+      "args": ["-y", "filestar@30.8.0", "mcp"]
     }
   }
 }
 ```
 
 On Windows, if `npx` is not found by the client, use `"command": "cmd"` and
-`"args": ["/c", "npx", "-y", "filestar@30.7.0", "mcp"]`.
+`"args": ["/c", "npx", "-y", "filestar@30.8.0", "mcp"]`.
 
 ## Check it
 

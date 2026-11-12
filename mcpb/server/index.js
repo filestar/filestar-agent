@@ -14,7 +14,7 @@ const zlib = require('zlib');
 const crypto = require('crypto');
 const { spawn } = require('child_process');
 
-const VERSION = '30.7.0';
+const VERSION = '30.8.0';
 const PLATFORMS = { 'win32-x64': 1, 'win32-ia32': 1, 'darwin-x64': 1, 'darwin-arm64': 1, 'linux-x64': 1 };
 const key = `${process.platform}-${process.arch}`;
 const log = (m) => process.stderr.write(`filestar: ${m}\n`);

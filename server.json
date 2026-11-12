@@ -8,7 +8,7 @@
     "url": "https://github.com/filestar/filestar-agent",
     "source": "github"
   },
-  "version": "30.7.0",
+  "version": "30.8.0",
   "icons": [
     {
       "src": "https://filestar.com/logo-512.png",
@@ -23,7 +23,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "filestar",
-      "version": "30.7.0",
+      "version": "30.8.0",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"

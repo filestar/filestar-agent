@@ -12,12 +12,12 @@ what can be done with it, and converts it, on your computer. 50 free conversions
 [![Claude Code](assets/badges/claude-code.svg)](https://filestar.com/agents#install)
 [![Claude Desktop](assets/badges/claude-desktop.svg)](https://filestar.com/agents#install)
 [![Codex](assets/badges/codex.svg)](https://filestar.com/agents#install)
-[![Cursor](assets/badges/cursor.svg)](https://cursor.com/en/install-mcp?name=filestar&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsImZpbGVzdGFyQDMwLjcuMCIsIm1jcCJdfQ%3D%3D)
+[![Cursor](assets/badges/cursor.svg)](https://cursor.com/en/install-mcp?name=filestar&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsImZpbGVzdGFyQDMwLjguMCIsIm1jcCJdfQ%3D%3D)
 [![Gemini CLI](assets/badges/gemini-cli.svg)](https://filestar.com/agents#install)
-[![GitHub Copilot](assets/badges/github-copilot.svg)](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522filestar%2522%252C%2522type%2522%253A%2522stdio%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522filestar%254030.7.0%2522%252C%2522mcp%2522%255D%257D)
-[![VS Code](assets/badges/vs-code.svg)](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522filestar%2522%252C%2522type%2522%253A%2522stdio%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522filestar%254030.7.0%2522%252C%2522mcp%2522%255D%257D)
+[![GitHub Copilot](assets/badges/github-copilot.svg)](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522filestar%2522%252C%2522type%2522%253A%2522stdio%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522filestar%254030.8.0%2522%252C%2522mcp%2522%255D%257D)
+[![VS Code](assets/badges/vs-code.svg)](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522filestar%2522%252C%2522type%2522%253A%2522stdio%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522filestar%254030.8.0%2522%252C%2522mcp%2522%255D%257D)
 [![Windsurf](assets/badges/windsurf.svg)](https://filestar.com/agents#install)
-[![Kiro](assets/badges/kiro.svg)](https://kiro.dev/launch/mcp/add?name=filestar&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22filestar%4030.7.0%22%2C%22mcp%22%5D%7D)
+[![Kiro](assets/badges/kiro.svg)](https://kiro.dev/launch/mcp/add?name=filestar&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22filestar%4030.8.0%22%2C%22mcp%22%5D%7D)
 [![Junie](assets/badges/junie.svg)](https://filestar.com/agents#install)
 [![LM Studio](assets/badges/lm-studio.svg)](https://filestar.com/agents#install)
 [![Goose](assets/badges/goose.svg)](https://filestar.com/agents#install)
@@ -37,25 +37,25 @@ the MCP configuration and the examples, under the MIT licence. They start the Fi
 /plugin install filestar@filestar
 ```
 
-or the MCP server alone: `claude mcp add filestar -- npx -y filestar@30.7.0 mcp`
+or the MCP server alone: `claude mcp add filestar -- npx -y filestar@30.8.0 mcp`
 
 **Any agent with MCP** (Claude Desktop, Cursor, Windsurf, Junie, Kiro, Cline, Roo Code, LM Studio, Goose...):
 
 ```json
 {
   "mcpServers": {
-    "filestar": { "command": "npx", "args": ["-y", "filestar@30.7.0", "mcp"] }
+    "filestar": { "command": "npx", "args": ["-y", "filestar@30.8.0", "mcp"] }
   }
 }
 ```
 
-VS Code uses `servers` instead of `mcpServers`: `code --add-mcp '{"name":"filestar","type":"stdio","command":"npx","args":["-y","filestar@30.7.0","mcp"]}'`
+VS Code uses `servers` instead of `mcpServers`: `code --add-mcp '{"name":"filestar","type":"stdio","command":"npx","args":["-y","filestar@30.8.0","mcp"]}'`
 
 **Gemini CLI:** `gemini extensions install https://github.com/filestar/filestar-agent`
 
 **Codex:** `codex plugin marketplace add filestar/filestar-agent`
 
-**Let Filestar do it:** `npx -y filestar@30.7.0 agent install` finds the agents on this computer (Claude Code, Codex,
+**Let Filestar do it:** `npx -y filestar@30.8.0 agent install` finds the agents on this computer (Claude Code, Codex,
 Claude Desktop, Cursor, Gemini CLI, GitHub Copilot CLI, opencode, Windsurf, VS Code) and adds Filestar to each, as a
 skill or an MCP server. `agent uninstall` takes it out again.
 

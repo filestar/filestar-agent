@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "filestar",
   "display_name": "Filestar",
-  "version": "30.7.0",
+  "version": "30.8.0",
   "description": "Open and convert 1,600+ file types on your computer: CAD, 3D, video, audio, images, documents, embroidery.",
   "long_description": "Filestar lets Claude open and convert 1,600+ file types (CAD, 3D, video, audio, images, documents, embroidery, legacy formats) locally on your machine. Files stay on your computer: cloud skills are refused unless you agree. On first start the extension fetches the Filestar command line for your platform from npm (about 100 MB, once). 50 free conversions per computer, no account.",
   "author": {

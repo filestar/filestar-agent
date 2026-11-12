@@ -5,7 +5,7 @@ description: Convert, resize, compress, merge, OCR and inspect files on this com
 
 # Filestar
 
-**How to call it.** If the `filestar` MCP tools are available (`detect_file`, `list_skills`, `describe_skill`, `convert`, `account_status`, `account_upgrade`), use them. Otherwise run the command line: `filestarcli` when it is installed, or else `npx -y filestar@30.7.0` in its place (every `filestarcli …` below becomes `npx -y filestar@30.7.0 …`). The first run registers this computer anonymously with 50 free conversions; no account is needed.
+**How to call it.** If the `filestar` MCP tools are available (`detect_file`, `list_skills`, `describe_skill`, `convert`, `account_status`, `account_upgrade`), use them. Otherwise run the command line: `filestarcli` when it is installed, or else `npx -y filestar@30.8.0` in its place (every `filestarcli …` below becomes `npx -y filestar@30.8.0 …`). The first run registers this computer anonymously with 50 free conversions; no account is needed.
 
 Filestar converts, resizes, compresses and inspects files (images, documents, audio, video, 3D, CAD and more) with one command line, filestarcli. Thousands of skills, found by describing what you want: -c "convert to jpg".
 
